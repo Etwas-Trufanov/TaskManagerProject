@@ -1,0 +1,14 @@
+services:
+  myservice:
+    build: .
+    container_name: myservice
+    restart: unless-stopped
+
+    ports:
+      - "8080:1489"
+
+    volumes:
+      - ./data:/app/data
+
+    environment:
+      PYTHONUNBUFFERED: "1"
